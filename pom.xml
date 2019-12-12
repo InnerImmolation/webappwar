@@ -24,6 +24,17 @@ Also show cases the 'Simple Logging Framework - slf4j'.</description>
 
 	<build>
 		<plugins>
+            <plugin>
+            <groupId>org.wildfly.plugins</groupId>
+            <artifactId>wildfly-maven-plugin</artifactId>
+            <version>2.0.1.Final</version>
+              <configuration>
+                <hostname>192.168.56.101</hostname>
+                <port>${wildfly-port}</port>
+                <username>wild</username>
+                <password>wild</password>
+              </configuration>
+            </plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -47,7 +58,7 @@ Also show cases the 'Simple Logging Framework - slf4j'.</description>
 			</plugin>
 		</plugins>
 		<!-- shown as an example, second priority for the WAR name -->
-		<finalName>mywebappNameSecondOption</finalName>
+		<finalName>mywebapp</finalName>
 	</build>
 
 	<dependencies>
